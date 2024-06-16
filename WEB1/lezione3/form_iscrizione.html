@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Iscrizione ITS</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    /* Stili aggiuntivi, se necessario */
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Form di Iscrizione ITS</h1>
+    <form action="process.php" method="POST" enctype="multipart/form-data">
+        <!-- Nome e Cognome -->
+        <div class="row mb-3">
+            <div class="col">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" name="nome" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s']+" title="Inserisci un nome valido (solo lettere)" required>
+                <div class="invalid-feedback">Inserisci un nome valido (solo lettere).</div>
+            </div>
+            <div class="col">
+                <label for="cognome" class="form-label">Cognome</label>
+                <input type="text" class="form-control" id="cognome" name="cognome" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s']+" title="Inserisci un cognome valido (solo lettere)" required>
+                <div class="invalid-feedback">Inserisci un cognome valido (solo lettere).</div>
+            </div>
+        </div>
+
+        <!-- Data di nascita e Paese/Comune di nascita -->
+        <div class="row mb-3">
+            <div class="col">
+                <label for="data_nascita" class="form-label">Data di Nascita</label>
+                <input type="date" class="form-control" id="data_nascita" name="data_nascita" required>
+                <div class="invalid-feedback">Inserisci una data di nascita valida.</div>
+            </div>
+            <div class="col">
+                <label for="luogo_nascita" class="form-label">Paese/Comune di Nascita</label>
+                <input type="text" class="form-control" id="luogo_nascita" name="luogo_nascita" required>
+                <div class="invalid-feedback">Inserisci un paese/comune di nascita valido.</div>
+            </div>
+        </div>
+
+        <!-- Sesso -->
+        <div class="mb-3">
+            <label for="sesso" class="form-label">Sesso</label>
+            <select class="form-select" id="sesso" name="sesso" required>
+                <option value="">Seleziona...</option>
+                <option value="M">Maschio</option>
+                <option value="F">Femmina</option>
+                <option value="Altro">Altro</option>
+            </select>
+            <div class="invalid-feedback">Seleziona il sesso.</div>
+        </div>
+
+        <!-- Indirizzo di residenza, CAP, Comune di residenza -->
+        <div class="row mb-3">
+            <div class="col">
+                <label for="indirizzo" class="form-label">Indirizzo di Residenza</label>
+                <input type="text" class="form-control" id="indirizzo" name="indirizzo" required>
+                <div class="invalid-feedback">Inserisci un indirizzo valido.</div>
+            </div>
+            <div class="col">
+                <label for="cap" class="form-label">CAP</label>
+                <input type="text" class="form-control" id="cap" name="cap" pattern="[0-9]{5}" title="Inserisci un CAP valido (5 cifre)" required>
+                <div class="invalid-feedback">Inserisci un CAP valido (5 cifre).</div>
+            </div>
+            <div class="col">
+                <label for="comune_residenza" class="form-label">Comune di Residenza</label>
+                <input type="text" class="form-control" id="comune_residenza" name="comune_residenza" required>
+                <div class="invalid-feedback">Inserisci un comune di residenza valido.</div>
+            </div>
+        </div>
+
+        <!-- Codice Fiscale -->
+        <div class="mb-3">
+            <label for="codice_fiscale" class="form-label">Codice Fiscale</label>
+            <input type="text" class="form-control" id="codice_fiscale" name="codice_fiscale" pattern="[A-Za-z0-9]{16}" title="Inserisci un codice fiscale valido (16 caratteri alfanumerici)" required>
+            <div class="invalid-feedback">Inserisci un codice fiscale valido (16 caratteri alfanumerici).</div>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+            <div class="invalid-feedback">Inserisci un indirizzo email valido.</div>
+        </div>
+
+        <!-- Caricamento CV -->
+        <div class="mb-3">
+            <label for="cv" class="form-label">Carica il tuo CV</label>
+            <input type="file" class="form-control" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+            <div class="invalid-feedback">Carica un file CV in formato PDF, DOC o DOCX.</div>
+        </div>
+
+        <!-- Istruzione -->
+        <div class="mb-3">
+            <label for="istruzione" class="form-label">Livello di Istruzione</label>
+            <select class="form-select" id="istruzione" name="istruzione" required>
+                <option value="">Seleziona...</option>
+                <option value="Scuola Media">Scuola Media</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Laurea Triennale">Laurea Triennale</option>
+                <option value="Laurea Magistrale">Laurea Magistrale</option>
+                <option value="Altro">Altro</option>
+            </select>
+            <div class="invalid-feedback">Seleziona il livello di istruzione.</div>
+        </div>
+
+        <!-- Pulsante di Invio -->
+        <button type="submit" class="btn btn-primary">Invia</button>
+    </form>
+</div>
+</body>
+</html>
