@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Login</h1>
+    <form action="process_login.php" method="POST">
+        <!-- Email -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+            <div class="invalid-feedback">Inserisci un indirizzo email valido.</div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" minlength="8" required>
+            <div class="invalid-feedback">Inserisci una password di almeno 8 caratteri.</div>
+        </div>
+
+        <!-- Link per la registrazione -->
+        <p>Non sei ancora registrato? <a href="registrazione.html">Registrati qui</a></p>
+
+        <!-- Pulsante di Invio -->
+        <button type="submit" class="btn btn-primary">Accedi</button>
+    </form>
+</div>
+
+</body>
+</html>
