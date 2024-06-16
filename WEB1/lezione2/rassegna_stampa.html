@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auto-updated Press Review</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    table {
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        border-collapse: collapse;
+    }
+    td {
+        border: 1px solid #ccc;
+        padding: 0;
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none; /* Remove iframe border */
+    }
+</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><iframe src="https://www.corriere.it/" id="press-review-iframe"></iframe></td>
+        </tr>
+    </table>
+
+    <script>
+        // Aggiorna automaticamente il contenuto dell'iframe ogni 5 minuti
+        setInterval(function() {
+            var iframe = document.getElementById('press-review-iframe');
+            iframe.src = iframe.src; // Aggiorna il contenuto dell'iframe
+        }, 300000); // 300000 millisecondi = 5 minuti
+    </script>
+</body>
+</html>
